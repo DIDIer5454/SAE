@@ -11,7 +11,7 @@ public class ListeChainee implements Liste{
         this.tete=-1;
         }
 
-    public SousTitre val(int p){
+    public String val(int p){
        return (this.tab[p].getVal());
     }
     public void suplis(int p)
@@ -49,7 +49,7 @@ public class ListeChainee implements Liste{
     }
 
 
-    public void adjtlis(SousTitre s){
+    public void adjtlis(String s){
 int i =retournerPlaceLibre();
 int h = this.tete;
 this.tete=i;
@@ -59,7 +59,7 @@ this.tab[i].setVal(s);
         
     }
 
-    public void adjlis(int p, SousTitre s){
+    public void adjlis(int p,String s){
         int i =retournerPlaceLibre();
        int h = this.tab[p].getSuc();
         this.tab[p].setSuc(i);

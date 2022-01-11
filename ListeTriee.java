@@ -13,7 +13,13 @@ public class ListeTriee{
 	 * @param chaine element a inserer
 	 */
 	public void adjlisT(String chaine){
-		throw (new Error("not implemented"));
+		int i=this.liste.tete();
+		while(chaine.compareTo(this.tab[i])>0 && this.finliste(i)=false){
+			i=this.liste.suc(i);
+		}
+		if(chaine.compareTo(this.tab[i])<0){
+			this.adjlis
+		}
 	}
 
 	/**

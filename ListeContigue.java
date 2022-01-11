@@ -1,12 +1,12 @@
 public class ListeContigue
 implements Liste{
-	private SousTitre[] tab;
+	private String[] tab;
 	private int NbElements;
 
 
 	public ListeContigue(int t){
 		
-		this.tab = new SousTitre[t];
+		this.tab = new String[t];
 	}
 	/**
 	 * permet de supprimer un element d'une liste
@@ -24,7 +24,7 @@ this.NbElements=this.NbElements-1;	;
 	 * ajoute un element en tete de Liste
 	 * @param s Element a ajouter en tete
 	 */
-	public void adjtlis(SousTitre s){
+	public void adjtlis(String s){
 		for (int i=NbElements;i>0;i--){
 			tab[i]=tab[i-1];
 			
@@ -38,7 +38,7 @@ this.NbElements=this.NbElements+1;		;
 	 * @param p place apres laquelle inserer
 	 * @param s element a inserer
 	 */
-	public void adjlis(int p, SousTitre s){
+	public void adjlis(int p, String s){
 		for (int i=NbElements;i>p+1;i--){
 			tab[i]=tab[i-1];
 			
@@ -83,7 +83,7 @@ this.NbElements=this.NbElements+1;		;
 	 * @param p place de la liste
 	 * @return la valeur associee a p
 	 */
-	public SousTitre val(int p){
+	public String val(int p){
 		return(tab[p]);
 	}
 
