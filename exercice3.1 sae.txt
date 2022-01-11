@@ -1,9 +1,9 @@
-p<--tete(l)
+﻿p<--tete(l)
 prec<--tete(l)
 Trouvé<--faux
 
 //cas en tête de liste
-GROQSE BITE
+GROQSE GROSSE BITE
 
 Si finliste(l,p) 
 	adjtlis(l,v)
