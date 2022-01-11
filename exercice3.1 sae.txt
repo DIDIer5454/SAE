@@ -3,6 +3,7 @@ prec<--tete(l)
 Trouvé<--faux
 
 //cas en tête de liste
+GROQSE BITE
 
 Si finliste(l,p) 
 	adjtlis(l,v)
