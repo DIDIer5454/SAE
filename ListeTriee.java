@@ -14,12 +14,20 @@ public class ListeTriee{
 	 */
 	public void adjlisT(String chaine){
 		int i=this.liste.tete();
-		while(chaine.compareTo(this.tab[i])>0 && this.finliste(i)=false){
-			i=this.liste.suc(i);
-		}
-		if(chaine.compareTo(this.tab[i])<0){
-			this.adjlis
-		}
+		int i2=this.liste.tete();
+		if(this.liste.finliste(this.liste.tete())==true){
+			this.liste.adjtlis(chaine);
+		}else{
+			while(chaine.compareTo(this.liste.)>0 && this.liste.finliste(i)==false){
+				i2=i;
+				i=this.liste.suc(i);
+						}
+				if (chaine.compareTo(this.liste.tab[i])<=0 && this.liste.finliste(i)==false){
+					this.liste.adjlis(i2,chaine);
+				}else{
+					this.liste.adjlis(i1);
+				}
+	}
 	}
 
 	/**

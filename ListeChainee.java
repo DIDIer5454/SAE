@@ -1,12 +1,12 @@
 public class ListeChainee implements Liste{
 
     private int tete;
-    private  MaillonEntier[] tab;
+    private  MaillonString[] tab;
 
     public ListeChainee(int p){
-        this.tab=new MaillonEntier[p];
+        this.tab=new MaillonString[p];
         for (int i=0;i<this.tab.length;i++){
-            this.tab[i]= new MaillonEntier(null,-2);
+            this.tab[i]= new MaillonString(null,-2);
         }
         this.tete=-1;
         }
@@ -56,7 +56,7 @@ this.tete=i;
 this.tab[i].setSuc(h);
 this.tab[i].setVal(s);
 
-        
+
     }
 
     public void adjlis(int p,String s){
