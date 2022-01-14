@@ -102,4 +102,5 @@ this.tab[i].setVal(s);
         this.tab[p].setSuc(-2);
         this.tab[p].setVal(null);
     }
+    //creation de la methode trier permettant de trier la liste chainee en tant que liste chainee 
 }

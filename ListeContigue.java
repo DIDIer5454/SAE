@@ -5,21 +5,21 @@ implements Liste{
 
 
 	public ListeContigue(int t){
-		
+
 		this.tab = new String[t];
 	}
 	/**
 	 * permet de supprimer un element d'une liste
-	 * @param p place de l'element  supprimer 
+	 * @param p place de l'element  supprimer
 	 */
 public void suplis(int p){
 	for (int i=p;i<this.tab.length-1;i++){
 		tab[i]=tab[i+1];
-	
+
 	}
 this.NbElements=this.NbElements-1;	;
 }
-	
+
 	/**
 	 * ajoute un element en tete de Liste
 	 * @param s Element a ajouter en tete
@@ -27,12 +27,12 @@ this.NbElements=this.NbElements-1;	;
 	public void adjtlis(String s){
 		for (int i=NbElements;i>0;i--){
 			tab[i]=tab[i-1];
-			
+
 		}
 		tab[0]=s;
 this.NbElements=this.NbElements+1;		;
 	}
-	
+
 	/**
 	 * ajoute un element a un endroit quelconque dans la liste
 	 * @param p place apres laquelle inserer
@@ -41,13 +41,13 @@ this.NbElements=this.NbElements+1;		;
 	public void adjlis(int p, String s){
 		for (int i=NbElements;i>p+1;i--){
 			tab[i]=tab[i-1];
-			
+
 		}
 		tab[p+1]=s;
 		this.NbElements=this.NbElements+1;
-		
+
 	}
-	
+
 	/**
 	 * permet de savoir si on se trouve en fin de liste
 	 * @param p place ou on se trouve
@@ -60,7 +60,7 @@ this.NbElements=this.NbElements+1;		;
 			return false;
 		}
 	}
-	
+
 	/**
 	 * retourne la premiere place de la liste
 	 * @return tete de liste
@@ -68,7 +68,7 @@ this.NbElements=this.NbElements+1;		;
 	public int tete(){
 		return(0);
 	}
-	
+
 	/**
 	 * permet de connaitre la place suivante dans la liste
 	 * @param p place en cours
@@ -77,7 +77,7 @@ this.NbElements=this.NbElements+1;		;
 	public int suc(int p){
 		return (p+1);
 	}
-	
+
 	/**
 	 * retourne la valeur associee a la place p
 	 * @param p place de la liste
