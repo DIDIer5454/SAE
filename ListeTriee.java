@@ -18,7 +18,7 @@ public class ListeTriee{
 		if(this.liste.finliste(this.liste.tete())==true){
 			this.liste.adjtlis(chaine);
 		}else{
-			while(chaine.compareTo(this.liste.)>0 && this.liste.finliste(i)==false){
+			while(chaine.compareTo(this.liste.tab[i])>0 && this.liste.finliste(i)==false){
 				i2=i;
 				i=this.liste.suc(i);
 						}
@@ -35,7 +35,14 @@ public class ListeTriee{
 	 * @param chaine l'element a supprimer
 	 */
 	public void suplisT(String chaine){
-		throw (new Error("not implemented"));
+		int i=this.liste.tete();
+		if(this.liste.finliste(i)==false){
+		while(chaine.compareTo(this.liste.tab[i])!=0 && this.liste.finliste(i)==false){
+			i=this.liste.suc(i);
+		}
+		if(chaine.compareTo(this.liste.tab[i])==0){
+			this.liste.suplis(i);
+		}}
 	}
 
 	/**
@@ -43,8 +50,18 @@ public class ListeTriee{
 	 * @param chaine l'element que l'on recherche
 	 */
 	public boolean memlisT(String chaine){
-		throw (new Error("not implemented"));
+		int i=this.liste.tete();
+		boolean trouve=false;
+		if(this.liste.finliste(i)==false){
+		while(chaine.compareTo(this.liste.tab[i])>0 && this.liste.finliste(i)==false){
+			i=this.liste.suc(i);
+		}
+		if (chaine.compareTo(this.liste.tab[i])==0 && this.liste.finliste(i)==false){
+			trouve=true;
+		}
+		return(trouve);
 	}
+}
 
 	public String toString(){
 		// TODO (utiliser les fonctions deja ecrites dans les listes !)
