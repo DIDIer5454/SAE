@@ -7,8 +7,9 @@ public class ListeTriee{
 		// Affectation de la liste vide a l'attribut prive
 		// la liste triee est une liste contigue triee.
 		// donc pour la construire on va recopier par ordre croissant les elements de la liste passé en paramètre
-		// par contre une implementation ne pariat pas necessaire.
-		liste = new ListeContigue();
+		// par contre une implementation ne parait pas necessaire vue que Listetriee a comme attribut une liste.
+		// de plus les fonctions enoncées ne font pas partie de l'interface Liste.
+		liste = new ListeContigue(0);
 
 		//on trie la liste
 		if(this.liste.finliste(this.liste.tete())==false){
