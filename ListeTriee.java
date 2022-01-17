@@ -1,5 +1,6 @@
 public class ListeTriee{
 
+
 	// Attribut de liste sous-jacente
 	private Liste liste;
 
@@ -9,10 +10,11 @@ public class ListeTriee{
 		// donc pour la construire on va recopier par ordre croissant les elements de la liste passé en paramètre
 		// par contre une implementation ne parait pas necessaire vue que Listetriee a comme attribut une liste.
 		// de plus les fonctions enoncées ne font pas partie de l'interface Liste.
-		liste = new ListeContigue(0);
+		//liste = new ListeContigue(0);
+		this.liste=listevide;
 
 		//on trie la liste
-		if(this.liste.finliste(this.liste.tete())==false){
+		/*if(this.liste.finliste(this.liste.tete())==false){
 			int i1=this.liste.tete();
 			int i2=this.liste.tete();
 			String y;
@@ -23,6 +25,8 @@ public class ListeTriee{
 				y=this.liste.val(i1);
 			}
 		}
+
+		 */
 	}
 	}
 
@@ -83,6 +87,11 @@ public class ListeTriee{
 
 	public String toString(){
 		// TODO (utiliser les fonctions deja ecrites dans les listes !)
-		throw (new Error("not implemented"));
+		String s ="";
+		int i=this.liste.tete();
+		while(liste.finliste(i)!=true){
+			s+="this.liste.val(i)"+",";
+			i+=1;
+		}
 	}
 }

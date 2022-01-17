@@ -18,9 +18,86 @@ public class TestListeTriee {
 		lancer(new TestListeTriee(), args);
 	}
 
-	/** .... A COMPLETER ... **/
-	// ......................
-	// ......................
+	/**
+	 * test constructeur liste trie chainee
+	 */
+
+	@Test
+	public void test1_Lchainee(){
+		ListeChainee r = new ListeChainee(0);
+		ListeTriee h = new ListeTriee(r);
+		h.adjlisT("zozo");
+		h.adjlisT("baba");
+		h.adjlisT("beba");
+		h.adjlisT("roba");
+		assertEquals("la liste devrait etre","baba,beba,roba,zozo,",h.toString());
+
+	}
+	/**
+	 * test suppression element liste trie (chainee)
+	 */
+	public void test2_Lchaineesup() {
+		ListeChainee r = new ListeChainee(0);
+		ListeTriee h = new ListeTriee(r);
+		h.adjlisT("zozo");
+		h.adjlisT("baba");
+		h.adjlisT("beba");
+		h.adjlisT("roba");
+		h.suplisT("baba");
+		assertEquals("la liste devrait etre", "beba,roba,zozo,", h.toString());
+	}
+	/**
+	 * test suppression element inexistant liste trie (chainee)
+	 */
+	public void test3_Lchaineesup_pasok() {
+		ListeChainee r = new ListeChainee(0);
+		ListeTriee h = new ListeTriee(r);
+		h.adjlisT("zozo");
+		h.adjlisT("baba");
+		h.adjlisT("beba");
+		h.adjlisT("roba");
+		h.suplisT("bezf");
+		assertEquals("la liste devrait etre", "baba,beba,roba,zozo,", h.toString());
+	}
+	/**
+	 * test constructeur liste trie contigue
+	 */
+	public void test4_construccontigue){
+		ListeChainee r = new ListeContigue(0);
+		ListeTriee h = new ListeTriee(r);
+		h.adjlisT("zozo");
+		h.adjlisT("baba");
+		h.adjlisT("beba");
+		h.adjlisT("roba");
+		assertEquals("la liste devrait etre","baba,beba,roba,zozo,",h.toString());
+
+	}
+	/**
+	 * test suppression element liste trie (contigue)
+	 */
+	public void test5_Lcontigueesup() {
+		ListeChainee r = new ListeContigue(0);
+		ListeTriee h = new ListeTriee(r);
+		h.adjlisT("zozo");
+		h.adjlisT("baba");
+		h.adjlisT("beba");
+		h.adjlisT("roba");
+		h.suplisT("baba");
+		assertEquals("la liste devrait etre", "beba,roba,zozo,", h.toString());
+	}
+	/**
+	 * test suppression element inexistant liste trie (contigue)
+	 */
+	public void test6_Lcontiguesup_pasok() {
+		ListeChainee r = new ListeContigue(0);
+		ListeTriee h = new ListeTriee(r);
+		h.adjlisT("zozo");
+		h.adjlisT("baba");
+		h.adjlisT("beba");
+		h.adjlisT("roba");
+		h.suplisT("bezf");
+		assertEquals("la liste devrait etre", "baba,beba,roba,zozo,", h.toString());
+	}
 	// ......................
 	// ......................
 	// ......................

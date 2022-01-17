@@ -11,9 +11,7 @@ public class ListeChainee implements Liste{
         this.tete=-1;
         }
 
-    public String val(int p){
-       return (this.tab[p].getVal());
-    }
+
     public void suplis(int p)
     {
         if(p==this.tete)
