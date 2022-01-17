@@ -63,7 +63,7 @@ public class TestListeTriee {
 	 * test constructeur liste trie contigue
 	 */
 	public void test4_construccontigue){
-		ListeChainee r = new ListeContigue(0);
+		ListeContigue r = new ListeContigue(0);
 		ListeTriee h = new ListeTriee(r);
 		h.adjlisT("zozo");
 		h.adjlisT("baba");
@@ -76,7 +76,7 @@ public class TestListeTriee {
 	 * test suppression element liste trie (contigue)
 	 */
 	public void test5_Lcontigueesup() {
-		ListeChainee r = new ListeContigue(0);
+		ListeContigue r = new ListeContigue(0);
 		ListeTriee h = new ListeTriee(r);
 		h.adjlisT("zozo");
 		h.adjlisT("baba");
@@ -89,7 +89,7 @@ public class TestListeTriee {
 	 * test suppression element inexistant liste trie (contigue)
 	 */
 	public void test6_Lcontiguesup_pasok() {
-		ListeChainee r = new ListeContigue(0);
+		ListeContigue r = new ListeContigue(0);
 		ListeTriee h = new ListeTriee(r);
 		h.adjlisT("zozo");
 		h.adjlisT("baba");
