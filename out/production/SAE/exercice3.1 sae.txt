@@ -1,0 +1,40 @@
+﻿p<--tete(l)
+prec<--tete(l)
+Trouvé<--faux
+
+//cas en tête de liste
+GROQSE GROSSE BITE
+
+Si finliste(l,p) 
+	adjtlis(l,v)
+Sinon
+	//Parcours de la liste 
+
+	Tant que non Touvé et non finliste(l,p)
+
+		Si val (l,p) > v alors														
+			//ajout v après la place précédent             		  
+
+			Trouvé<--vrai
+			adjlis(l,prec)
+		sinon 
+			//On fait avancer p touten gardant la place precedente
+
+			prec<--p
+			p<--suc(l,p)
+		FSI											   |
+	FTQ												   |
+													   |
+FSI													   |
+													   |
+//Si on ne trouve pas ET que finliste (l,prec) ET finliste(l,p) ça veut dire que la liste nest pas vide    |
+													   |
+Si non trouvé et non finliste (l,prec) et finliste (l,p)						   |
+	adjqlis(l,v)											   |    			
+FSI													   |
+												           |
+___________________________________________________________________________________________________________|_______________________________________
+
+
+
+q2

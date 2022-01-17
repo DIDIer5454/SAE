@@ -1,19 +1,19 @@
-public class ListeTriee{
+public class ListeTriee {
 
 
-	// Attribut de liste sous-jacente
-	private Liste liste;
+    // Attribut de liste sous-jacente
+    private Liste liste;
 
-	public ListeTriee(Liste listevide){
-		// Affectation de la liste vide a l'attribut prive
-		// la liste triee est une liste contigue triee.
-		// donc pour la construire on va recopier par ordre croissant les elements de la liste passé en paramètre
-		// par contre une implementation ne parait pas necessaire vue que Listetriee a comme attribut une liste.
-		// de plus les fonctions enoncées ne font pas partie de l'interface Liste.
-		//liste = new ListeContigue(0);
-		this.liste=listevide;
+    public ListeTriee(Liste listevide) {
+        // Affectation de la liste vide a l'attribut prive
+        // la liste triee est une liste contigue triee.
+        // donc pour la construire on va recopier par ordre croissant les elements de la liste passé en paramètre
+        // par contre une implementation ne parait pas necessaire vue que Listetriee a comme attribut une liste.
+        // de plus les fonctions enoncées ne font pas partie de l'interface Liste.
+        //liste = new ListeContigue(0);
+        this.liste = listevide;
 
-		//on trie la liste
+        //on trie la liste
 		/*if(this.liste.finliste(this.liste.tete())==false){
 			int i1=this.liste.tete();
 			int i2=this.liste.tete();
@@ -27,71 +27,93 @@ public class ListeTriee{
 		}
 
 		 */
-	}
-	}
 
-	/**
-	 * ajoute un element au bon endroit dans la liste triee
-	 * @param chaine element a inserer
-	 */
-	public void adjlisT(String chaine){
-		int i=this.liste.tete();
-		int i2=this.liste.tete();
-		if(this.liste.finliste(this.liste.tete())==true){
-			this.liste.adjtlis(chaine);
-		}else{
-			while(chaine.compareTo(this.liste.val(i))>0 && this.liste.finliste(i)==false){
-				i2=i;
-				i=this.liste.suc(i);
-						}
-				if (chaine.compareTo(this.liste.val(i))<=0 && this.liste.finliste(i)==false){
-					this.liste.adjlis(i2,chaine);
-				}else{
-					this.liste.adjlis(i,chaine);
-				}
-	}
-	}
+    }
 
-	/**
-	 * permet de supprimer un element d'une liste. Supprime le premier element dont la valeur est egale a "chaine" ; ne fait rien si "chaine" n'appartient pas a la liste.
-	 * @param chaine l'element a supprimer
-	 */
-	public void suplisT(String chaine){
-		int i=this.liste.tete();
-		if(this.liste.finliste(i)==false){
-		while(chaine.compareTo(this.liste.val(i))!=0 && this.liste.finliste(i)==false){
-			i=this.liste.suc(i);
-		}
-		if(chaine.compareTo(this.liste.val(i))==0){
-			this.liste.suplis(i);
-		}}
-	}
+    /**
+     * ajoute un element au bon endroit dans la liste triee
+     *
+     * @param chaine element a inserer
+     */
 
-	/**
-	 * Retourne vrai si au moins un element de la liste a une valeur egale a "chaine", et retourne faux sinon.
-	 * @param chaine l'element que l'on recherche
-	 */
-	public boolean memlisT(String chaine){
-		int i=this.liste.tete();
-		boolean trouve=false;
-		if(this.liste.finliste(i)==false){
-		while(chaine.compareTo(this.liste.val(i))>0 && this.liste.finliste(i)==false){
-			i=this.liste.suc(i);
-		}
-		if (chaine.compareTo(this.liste.val(i))==0 && this.liste.finliste(i)==false){
-			trouve=true;
-		}
-	}
-		return(trouve);
-}
+    public void adjlisT(String chaine) {
+        int i = this.liste.tete();
+        int prec = this.liste.tete();
+        boolean trouve ;
+        trouve = false;
+        while (!this.liste.finliste(i) && !trouve ) {
+            if (chaine.compareTo(this.liste.val(i)) > 0) {
+                prec = i;
+                i = this.liste.suc(i);
+            } else {
+                trouve = true;
 
-	public String toString(){
-		// TODO (utiliser les fonctions deja ecrites dans les listes !)
-		String s ="";
-		int i=this.liste.tete();
-		while(liste.finliste(i)!=true){
-			s+="this.liste.val(i)"+",";
-			i+=1;
-		}
-	}
+
+            }
+        }
+        if (i==prec) {
+            this.liste.adjtlis(chaine);
+        }else{
+            this.liste.adjlis(prec,chaine);
+
+        }
+    }
+
+
+
+
+
+
+    /**
+     * permet de supprimer un element d'une liste. Supprime le premier element dont la valeur est egale a "chaine" ; ne fait rien si "chaine" n'appartient pas a la liste.
+     *
+     * @param chaine l'element a supprimer
+     */
+    public void suplisT(String chaine) {
+        int i = this.liste.tete();
+        boolean trouve = false;
+        while (this.liste.finliste(i) == false && trouve == false) {
+            if (this.liste.val(i).compareTo(chaine) != 0) {
+                i = this.liste.suc(i);
+            } else {
+                trouve = true;
+            }
+        }
+        if (trouve == true) {
+            this.liste.suplis(i);
+
+        }
+
+
+    }
+
+    /**
+     * Retourne vrai si au moins un element de la liste a une valeur egale a "chaine", et retourne faux sinon.
+     *
+     * @param chaine l'element que l'on recherche
+     */
+    public boolean memlisT(String chaine) {
+        int i = this.liste.tete();
+        boolean trouve = false;
+        if (this.liste.finliste(i) == false) {
+            while (chaine.compareTo(this.liste.val(i)) > 0 && this.liste.finliste(i) == false) {
+                i = this.liste.suc(i);
+            }
+            if (chaine.compareTo(this.liste.val(i)) == 0 && this.liste.finliste(i) == false) {
+                trouve = true;
+            }
+        }
+        return (trouve);
+    }
+
+    public String toString() {
+        // TODO (utiliser les fonctions deja ecrites dans les listes !)
+        String s = "";
+        int i = this.liste.tete();
+        while (liste.finliste(i) != true) {
+            s += this.liste.val(i) + ",";
+            i = this.liste.suc(i);
+        }
+        return s;
+    }
 }
