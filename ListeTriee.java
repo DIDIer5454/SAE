@@ -5,11 +5,18 @@ public class ListeTriee {
     private Liste liste;
 
     public ListeTriee(Liste listevide) {
-
+        if(listevide.finliste(listevide.tete())==true ){
         this.liste = listevide;
-
-    }
-
+      }else{
+            Liste r=new ListeContigue(100);
+            this.liste=r;
+            int i=listevide.tete();
+            while(listevide.finliste(i)==false){
+              this.adjlisT(listevide.val(i));
+              i=listevide.suc(i);
+            }
+          }
+        }
 
     /**
      * ajoute un element au bon endroit dans la liste triee
@@ -64,7 +71,6 @@ public class ListeTriee {
             this.liste.suplis(i);
 
         }
-
 
     }
     public long chronoch(){
