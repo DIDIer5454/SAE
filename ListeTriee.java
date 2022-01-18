@@ -5,18 +5,22 @@ public class ListeTriee {
     private Liste liste;
 
     public ListeTriee(Liste listevide) {
-        if(listevide.finliste(listevide.tete())==true ){
-        this.liste = listevide;
-      }else{
-            Liste r=new ListeContigue(100);
-            this.liste=r;
-            int i=listevide.tete();
-            while(listevide.finliste(i)==false){
-              this.adjlisT(listevide.val(i));
-              i=listevide.suc(i);
+        if (listevide.finliste(listevide.tete()) == true) {
+            this.liste = listevide;
+        } else {
+            Liste r = new ListeContigue(100);
+            this.liste = r;
+            int i = listevide.tete();
+            while (listevide.finliste(i) == false) {
+                this.adjlisT(listevide.val(i));
+                i = listevide.suc(i);
             }
-          }
         }
+    }
+
+
+
+
 
     /**
      * ajoute un element au bon endroit dans la liste triee
@@ -57,8 +61,10 @@ public class ListeTriee {
      *
      * @param chaine l'element a supprimer
      */
+
     public void suplisT(String chaine) {
         int i = this.liste.tete();
+
         boolean trouve = false;
         while (this.liste.finliste(i) == false && trouve == false) {
             if (this.liste.val(i).compareTo(chaine) != 0) {
@@ -68,11 +74,17 @@ public class ListeTriee {
             }
         }
         if (trouve == true) {
+
             this.liste.suplis(i);
 
         }
 
+
     }
+
+
+
+
     public long chronochbonus(){
         ListeChainee h = new ListeChainee(1000);
         ListeTriee f = new ListeTriee(h);
@@ -140,7 +152,8 @@ public class ListeTriee {
         return duree;
     }
     private static final String [] ELEMENTS_DE_FIN = {" RABIN ", " RIVEST ",
-            " SHAMIR ", " SIFAKIS "};
+            " SHAMIR ", " SIFAKIS ", " TORVALDS ", " TURING ", " ULLMAN ", " VALIANT ",
+            " WIRTH ", "YAO"};
     public long chronochfin10(){
         ListeChainee h = new ListeChainee(1000);
         ListeTriee f = new ListeTriee(h);
@@ -200,12 +213,41 @@ public class ListeTriee {
         long date_debut = System.nanoTime();
         for (int i = 0; i < 10; i++) {
             f.suplisT(ELEMENTS_DE_DEBUT[i]);
+
         }
         long date_fin = System.nanoTime();
         long duree = date_fin - date_debut;
         return duree;
     }
+    public long chronocosupfin() {
+        ListeChainee h = new ListeChainee(1000);
+        ListeTriee f = new ListeTriee(h);
+        for (int i = 0; i < ELEMENTS_DE_FIN.length; i++) {
+            f.adjlisT(ELEMENTS_DE_FIN[i]);
+        }
+        long date_debut = System.nanoTime();
+        for (int i = 0; i < 10; i++) {
+            f.suplisT(ELEMENTS_DE_FIN[i]);
 
+        }
+        long date_fin = System.nanoTime();
+        long duree = date_fin - date_debut;
+        return duree;
+    }
+    public long chronochsupfin() {
+        ListeChainee h = new ListeChainee(1000);
+        ListeTriee f = new ListeTriee(h);
+        for (int i = 0; i < ELEMENTS_DE_FIN.length; i++) {
+            f.adjlisT(ELEMENTS_DE_FIN[i]);
+        }
+        long date_debut = System.nanoTime();
+        for (int i = 0; i < 10; i++) {
+            f.suplisT(ELEMENTS_DE_FIN[i]);
+        }
+        long date_fin = System.nanoTime();
+        long duree = date_fin - date_debut;
+        return duree;
+    }
 
 
 

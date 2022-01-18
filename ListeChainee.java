@@ -11,33 +11,24 @@ public class ListeChainee implements Liste {
         this.tete = -1;
     }
 
-
-    public void suplis(int p) {
-        if (p == this.tete) {
-            int suc = this.tab[this.tete].getSuc();
-            this.LibererPlace(this.tete);
-            this.tete = suc;
-        } else {
-            if (this.tab[p].getSuc() != -1) {
-                int i = this.tete;
-                while (this.suc(i) != p) {
-                    i++;
-                }
-                int suc = this.tab[p].getSuc();
-                this.tab[i].setSuc(suc);
-                this.LibererPlace(p);
-            } else {
-                int i = 0;
-                while (this.suc(i) != p) {
-                    i++;
-                }
-                this.tab[i].setSuc(-1);
-                this.LibererPlace(p);
-            }
-        }
-    }
-
-
+  public void suplis(int p){
+      int i = this.tete;
+      if (p==i){
+          this.tete=this.tab[p].getSuc();
+          LibererPlace(p);
+      }else{
+          boolean trouve = false;
+          while(!trouve && !finliste(i)){
+              if(this.tab[i].getSuc()==p){
+                  trouve=true;
+                  this.tab[i].setSuc(this.tab[p].getSuc());
+                  LibererPlace(p);
+              }else{
+                  i=suc(i);
+              }
+          }
+      }
+  }
     public void adjtlis(String s) {
         int i = retournerPlaceLibre();
         int h = this.tete;
