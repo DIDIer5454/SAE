@@ -67,7 +67,7 @@ public class ListeTriee {
 
 
     }
-    public long chronoch(){
+    public long chronochbonus(){
         ListeChainee h = new ListeChainee(1000);
         ListeTriee f = new ListeTriee(h);
         long date_debut = System . nanoTime () ;
@@ -79,7 +79,26 @@ public class ListeTriee {
         long duree = date_fin - date_debut ;
         return duree;
     }
-    public long chronoco(){
+    private static final String [] ELEMENTS_DE_DEBUT = {"A", "AA", "AAA ",
+            " AAAA ", " AAAAA ", " AAAAAA ", " AAAAAAA ", " AAAAAAAA ", " AAAAAAAAA ",
+            " AAAAAAAAAA "};
+    public long chronoch10() {
+        ListeChainee h = new ListeChainee(1000);
+        ListeTriee f = new ListeTriee(h);
+        long date_debut = System.nanoTime();
+        for (int i = 0; i < ELEMENTS_DE_DEBUT.length; i++) {
+            f.adjlisT(ELEMENTS_DE_DEBUT[i]);
+        }
+        long date_fin = System.nanoTime();
+        long duree = date_fin - date_debut;
+        return duree;
+    }
+
+
+
+
+
+    public long chronocobonus(){
         ListeContigue h = new ListeContigue(1000);
         ListeTriee f = new ListeTriee(h);
         long date_debut = System . nanoTime () ;
@@ -91,8 +110,18 @@ public class ListeTriee {
         long duree = date_fin - date_debut ;
         return duree;
     }
-
-    public long chronochfin(){
+    public long chronoco10() {
+        ListeContigue h = new ListeContigue(1000);
+        ListeTriee f = new ListeTriee(h);
+        long date_debut = System.nanoTime();
+        for (int i = 0; i < ELEMENTS_DE_DEBUT.length; i++) {
+            f.adjlisT(ELEMENTS_DE_DEBUT[i]);
+        }
+        long date_fin = System.nanoTime();
+        long duree = date_fin - date_debut;
+        return duree;
+    }
+    public long chronochfinbonus(){
         ListeChainee h = new ListeChainee(1000);
         ListeTriee f = new ListeTriee(h);
         long date_debut = System . nanoTime () ;
@@ -104,7 +133,21 @@ public class ListeTriee {
         long duree = date_fin - date_debut ;
         return duree;
     }
-    public long chronocofin(){
+    private static final String [] ELEMENTS_DE_FIN = {" RABIN ", " RIVEST ",
+            " SHAMIR ", " SIFAKIS "};
+    public long chronochfin10(){
+        ListeChainee h = new ListeChainee(1000);
+        ListeTriee f = new ListeTriee(h);
+        long date_debut = System.nanoTime();
+        for (int i = 0; i < ELEMENTS_DE_FIN.length; i++) {
+            f.adjlisT(ELEMENTS_DE_FIN[i]);
+        }
+        long date_fin = System.nanoTime();
+        long duree = date_fin - date_debut;
+        return duree;
+    }
+
+    public long chronocofinbonus(){
         ListeContigue h = new ListeContigue(1000);
         ListeTriee f = new ListeTriee(h);
         long date_debut = System . nanoTime () ;
@@ -116,6 +159,50 @@ public class ListeTriee {
         long duree = date_fin - date_debut ;
         return duree;
     }
+    public long chronocofin10(){
+        ListeContigue h = new ListeContigue(1000);
+        ListeTriee f = new ListeTriee(h);
+        long date_debut = System.nanoTime();
+        //trie la liste donné
+        for (int i = 0; i < ELEMENTS_DE_FIN.length; i++) {
+            f.adjlisT(ELEMENTS_DE_FIN[i]);
+        }
+        long date_fin = System.nanoTime();
+        long duree = date_fin - date_debut;
+        return duree;
+    }
+    public long chronocosup() {
+        ListeContigue h = new ListeContigue(1000);
+        ListeTriee f = new ListeTriee(h);
+        for (int i = 0; i < ELEMENTS_DE_DEBUT.length; i++) {
+            f.adjlisT(ELEMENTS_DE_DEBUT[i]);
+        }
+        long date_debut = System.nanoTime();
+        for (int i = 0; i < 10; i++) {
+            f.suplisT(ELEMENTS_DE_DEBUT[i]);
+        }
+        long date_fin = System.nanoTime();
+        long duree = date_fin - date_debut;
+        return duree;
+    }
+    public long chronochsup() {
+        ListeChainee h = new ListeChainee(1000);
+        ListeTriee f = new ListeTriee(h);
+        for (int i = 0; i < ELEMENTS_DE_DEBUT.length; i++) {
+            f.adjlisT(ELEMENTS_DE_DEBUT[i]);
+        }
+        long date_debut = System.nanoTime();
+        for (int i = 0; i < 10; i++) {
+            f.suplisT(ELEMENTS_DE_DEBUT[i]);
+        }
+        long date_fin = System.nanoTime();
+        long duree = date_fin - date_debut;
+        return duree;
+    }
+
+
+
+
 
     /**
      * Retourne vrai si au moins un element de la liste a une valeur egale a "chaine", et retourne faux sinon.
@@ -146,4 +233,6 @@ public class ListeTriee {
         }
         return s;
     }
+
+
 }
