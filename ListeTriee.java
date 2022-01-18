@@ -51,11 +51,6 @@ public class ListeTriee {
         }
     }
 
-
-
-
-
-
     /**
      * permet de supprimer un element d'une liste. Supprime le premier element dont la valeur est egale a "chaine" ; ne fait rien si "chaine" n'appartient pas a la liste.
      *
@@ -78,28 +73,28 @@ public class ListeTriee {
             this.liste.suplis(i);
 
         }
+}
 
-
-    }
-
-
-
-
-    public long chronochbonus(){
-        ListeChainee h = new ListeChainee(1000);
-        ListeTriee f = new ListeTriee(h);
-        long date_debut = System . nanoTime () ;
-        for (char i='a';i<='j';i++){
-          String p=  Character.toString(i);
-            f.adjlisT(p);
-        }
-        long date_fin = System . nanoTime () ;
-        long duree = date_fin - date_debut ;
-        return duree;
-    }
     private static final String [] ELEMENTS_DE_DEBUT = {"A", "AA", "AAA ",
             " AAAA ", " AAAAA ", " AAAAAA ", " AAAAAAA ", " AAAAAAAA ", " AAAAAAAAA ",
             " AAAAAAAAAA "};
+    private static final String [] ELEMENTS_DE_FIN = {" RABIN ", " RIVEST ",
+            " SHAMIR ", " SIFAKIS ", " TORVALDS ", " TURING ", " ULLMAN ", " VALIANT ",
+            " WIRTH ", "YAO"};
+
+    public long chronochbonus(){
+            ListeChainee h = new ListeChainee(1000);
+            ListeTriee f = new ListeTriee(h);
+            long date_debut = System . nanoTime () ;
+            for (char i='a';i<='j';i++){
+              String p=  Character.toString(i);
+              f.adjlisT(p);
+            }
+            long date_fin = System . nanoTime () ;
+            long duree = date_fin - date_debut ;
+            return duree;
+          }
+
     public long chronoch10() {
         ListeChainee h = new ListeChainee(1000);
         ListeTriee f = new ListeTriee(h);
@@ -111,10 +106,6 @@ public class ListeTriee {
         long duree = date_fin - date_debut;
         return duree;
     }
-
-
-
-
 
     public long chronocobonus(){
         ListeContigue h = new ListeContigue(1000);
@@ -128,6 +119,7 @@ public class ListeTriee {
         long duree = date_fin - date_debut ;
         return duree;
     }
+
     public long chronoco10() {
         ListeContigue h = new ListeContigue(1000);
         ListeTriee f = new ListeTriee(h);
@@ -139,6 +131,7 @@ public class ListeTriee {
         long duree = date_fin - date_debut;
         return duree;
     }
+
     public long chronochfinbonus(){
         ListeChainee h = new ListeChainee(1000);
         ListeTriee f = new ListeTriee(h);
@@ -151,9 +144,7 @@ public class ListeTriee {
         long duree = date_fin - date_debut ;
         return duree;
     }
-    private static final String [] ELEMENTS_DE_FIN = {" RABIN ", " RIVEST ",
-            " SHAMIR ", " SIFAKIS ", " TORVALDS ", " TURING ", " ULLMAN ", " VALIANT ",
-            " WIRTH ", "YAO"};
+
     public long chronochfin10(){
         ListeChainee h = new ListeChainee(1000);
         ListeTriee f = new ListeTriee(h);
