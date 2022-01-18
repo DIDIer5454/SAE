@@ -98,8 +98,9 @@ public class TestListeTriee {
 		h.suplisT("bezf");
 		assertEquals("la liste devrait etre", "baba,beba,roba,zozo,", h.toString());
 	}
-	// ......................
-	// ......................
-	// ......................
+	public void test_lecturefichier(){
+		ListeContigue r = new ListeContigue(1000);
+
+	}
 
 }

@@ -5,30 +5,11 @@ public class ListeTriee {
     private Liste liste;
 
     public ListeTriee(Liste listevide) {
-        // Affectation de la liste vide a l'attribut prive
-        // la liste triee est une liste contigue triee.
-        // donc pour la construire on va recopier par ordre croissant les elements de la liste passé en paramètre
-        // par contre une implementation ne parait pas necessaire vue que Listetriee a comme attribut une liste.
-        // de plus les fonctions enoncées ne font pas partie de l'interface Liste.
-        //liste = new ListeContigue(0);
+
         this.liste = listevide;
 
-        //on trie la liste
-		/*if(this.liste.finliste(this.liste.tete())==false){
-			int i1=this.liste.tete();
-			int i2=this.liste.tete();
-			String y;
-			while(this.liste.finliste(i1)==false){
-				i2=i1;
-				i1=this.liste.suc(i1);
-			if(this.liste.val(i1).compareTo(this.liste.val(i2))<=0) {
-				y=this.liste.val(i1);
-			}
-		}
-
-		 */
-
     }
+
 
     /**
      * ajoute un element au bon endroit dans la liste triee
@@ -85,6 +66,55 @@ public class ListeTriee {
         }
 
 
+    }
+    public long chronoch(){
+        ListeChainee h = new ListeChainee(1000);
+        ListeTriee f = new ListeTriee(h);
+        long date_debut = System . nanoTime () ;
+        for (char i='a';i<='j';i++){
+          String p=  Character.toString(i);
+            f.adjlisT(p);
+        }
+        long date_fin = System . nanoTime () ;
+        long duree = date_fin - date_debut ;
+        return duree;
+    }
+    public long chronoco(){
+        ListeContigue h = new ListeContigue(1000);
+        ListeTriee f = new ListeTriee(h);
+        long date_debut = System . nanoTime () ;
+        for (char i='a';i<='j';i++){
+          String p= Character.toString(i);
+            f.adjlisT(p);
+        }
+        long date_fin = System . nanoTime () ;
+        long duree = date_fin - date_debut ;
+        return duree;
+    }
+
+    public long chronochfin(){
+        ListeChainee h = new ListeChainee(1000);
+        ListeTriee f = new ListeTriee(h);
+        long date_debut = System . nanoTime () ;
+        for (char i='z';i<='q';i--){
+            String p=  Character.toString(i);
+            f.adjlisT(p);
+        }
+        long date_fin = System . nanoTime () ;
+        long duree = date_fin - date_debut ;
+        return duree;
+    }
+    public long chronocofin(){
+        ListeContigue h = new ListeContigue(1000);
+        ListeTriee f = new ListeTriee(h);
+        long date_debut = System . nanoTime () ;
+        for (char i='z';i<='q';i--){
+            String p=  Character.toString(i);
+            f.adjlisT(p);
+        }
+        long date_fin = System . nanoTime () ;
+        long duree = date_fin - date_debut ;
+        return duree;
     }
 
     /**
