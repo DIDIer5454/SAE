@@ -15,6 +15,7 @@ public class ListeChainee implements Liste {
       int i = this.tete;
       if (p==i){
           this.tete=this.tab[p].getSuc();
+
           LibererPlace(p);
       }else{
           boolean trouve = false;

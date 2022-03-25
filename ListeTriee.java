@@ -239,8 +239,30 @@ public class ListeTriee {
         long duree = date_fin - date_debut;
         return duree;
     }
-
-
+    public long chronochmemfin(String chaine) {
+        ListeChainee h = new ListeChainee(1000);
+        ListeTriee f = new ListeTriee(h);
+        for (int i = 0; i < ELEMENTS_DE_FIN.length; i++) {
+            f.adjlisT(ELEMENTS_DE_FIN[i]);
+        }
+        long date_debut = System.nanoTime();
+        this.memlisT(chaine);
+        long date_fin=System.nanoTime();
+        long duree=date_fin-date_debut;
+        return duree;
+    }
+    public long chronomemdebut(String chaine){
+    ListeChainee h = new ListeChainee(1000);
+    ListeTriee f = new ListeTriee(h);
+    for (int i = 0; i < ELEMENTS_DE_DEBUT.length; i++) {
+        f.adjlisT(ELEMENTS_DE_DEBUT[i]);
+    }
+    long date_debut = System.nanoTime();
+    this.memlisT(chaine);
+    long date_fin = System.nanoTime();
+    long duree = date_fin - date_debut;
+    return duree;
+}
 
 
     /**

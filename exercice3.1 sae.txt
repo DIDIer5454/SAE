@@ -2,8 +2,7 @@
 prec<--tete(l)
 Trouvé<--faux
 
-//cas en tête de liste
-GROQSE GROSSE BITE
+//cas en tête de listes
 
 Si finliste(l,p) 
 	adjtlis(l,v)

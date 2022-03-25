@@ -102,9 +102,6 @@ public class FiProg {
 		long trouveChF = h2.chronochsupfin();
 		System.out.println(trouveChF);
 
-		//question 22
-		for(int i=0;i<10;i++){
-
 		}
 	}
 
